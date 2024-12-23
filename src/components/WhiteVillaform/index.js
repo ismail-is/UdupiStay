@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import whatsapp1 from '../../images/allimg/whatsapp/whatsapp1.png';
+import whatsapp1 from "../../images/allimg/whatsapp/whatsapp1.png";
+
 class WhiteVillaForm extends Component {
   state = {
     name: "", // Check-in date
@@ -45,7 +46,7 @@ class WhiteVillaForm extends Component {
   };
 
   calculateTotalPrice = () => {
-    const { name, lastname } = this.state;
+    const { name, lastname, guests } = this.state;
     if (!name || !lastname) return;
 
     const checkInDate = new Date(name);
@@ -63,7 +64,11 @@ class WhiteVillaForm extends Component {
       currentDate.setDate(currentDate.getDate() + 1);
     }
 
-    this.setState({ totalPrice });
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 10 ? guestCount - 10 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    this.setState({ totalPrice: totalPrice + extraCharges });
   };
 
   componentDidUpdate(_, prevState) {
@@ -90,7 +95,7 @@ class WhiteVillaForm extends Component {
       this.setState({ error: newError });
       return;
     }
-    const message = `Hello,Book WhiteHouse For:
+    const message = `Hello, Book WhiteVilla For:
     Check-in Date: ${name}
     Check-out Date: ${lastname}
     Number of Guests: ${guests}
@@ -111,6 +116,20 @@ class WhiteVillaForm extends Component {
     });
   };
 
+  handleGuestsChange = (e) => {
+    const value = e.target.value;
+    this.setState({
+      guests: value,
+      error: {
+        ...this.state.error,
+        guests:
+          value > 10
+            ? "Maximum 10 guest,Rs 650 extra per guest"
+            : "",
+      },
+    });
+  };
+
   render() {
     const { name, lastname, guests, error, totalPrice } = this.state;
 
@@ -126,6 +145,10 @@ class WhiteVillaForm extends Component {
       textAlign: "center",
       display: "block",
     };
+
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 10 ? guestCount - 10 : 0;
+    const extraCharges = extraGuestCount * 650;
 
     return (
       <div>
@@ -143,7 +166,7 @@ class WhiteVillaForm extends Component {
                   id="checkInDate"
                   value={name}
                   onChange={this.changeHandler}
-                  type="date" // Changed type to 'text' for formatted date display
+                  type="date"
                   name="name"
                   placeholder="dd-mm-yyyy"
                   min={today}
@@ -161,7 +184,7 @@ class WhiteVillaForm extends Component {
                   id="checkOutDate"
                   value={lastname}
                   onChange={this.changeHandler}
-                  type="date" // Changed type to 'text' for formatted date display
+                  type="date"
                   name="lastname"
                   placeholder="dd-mm-yyyy"
                   min={minCheckoutDate}
@@ -178,31 +201,40 @@ class WhiteVillaForm extends Component {
                 <input
                   id="guests"
                   value={guests}
-                  onChange={this.changeHandler}
+                  onChange={this.handleGuestsChange}
                   type="number"
                   name="guests"
                   placeholder="0"
                   min="1"
-                  max="30"
+                  max="40"
                   style={{ backgroundColor: "white" }}
                 />
                 <p style={{ color: "red" }}>{error.guests}</p>
               </div>
             </div>
-            <div className="col-lg-3 col-md-12 col-12 d-flex justify-content-center" style={{ marginTop: "20px" }}>
+            <div
+              className="col-lg-3 col-md-12 col-12 d-flex justify-content-center"
+              style={{ marginTop: "20px" }}
+            >
               <div className="form-field">
                 <button
                   type="submit"
                   className="theme-btn"
                   style={{ borderRadius: "3px" }}
                 >
-                  
                   Book Now
                 </button>
               </div>
             </div>
-            <div className="col-lg-12 col-md-12 col-12" style={{marginTop:'30px',textAlign:"center"}}>
-              <h4>Total Price: Rs. {totalPrice}</h4>
+            <div
+              className="col-lg-12 col-md-12 col-12"
+              style={{ marginTop: "30px", textAlign: "center" }}
+            >
+              <h4>
+                Total Price: Rs. {totalPrice}
+                {extraCharges > 0 &&
+                  `  +${extraCharges}`}
+              </h4>
             </div>
           </div>
         </form>

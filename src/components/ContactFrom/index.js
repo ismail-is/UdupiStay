@@ -103,13 +103,14 @@ class ContactForm extends Component {
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
                             <select className="form-control" onChange={this.changeHandler} value={subject} type="text" name="subject">
-                                <option >Service</option>
-                                <option>Architecture</option>
-                                <option>The Rehearsal Dinner</option>
-                                <option>The Afterparty</option>
-                                <option>Videographers</option>
-                                <option>Perfect Cake</option>
-                                <option>All Of The Above</option>
+                                <option >Home Stay</option>
+                                <option>WHITE HOUSE</option>
+                                <option>GARDEN VILLA</option>
+                                <option>COTTAGE HOUSE</option>
+                                <option>HILL TOP VILLA</option>
+                                <option>SUNRISE HOME</option>
+                                <option>CHALET LA BONNE VIE</option>
+                                <option>VIEWPOINT OASIS</option>
                             </select>
                             <p>{error.subject ? error.subject : ''}</p>
                         </div>

@@ -33,19 +33,19 @@ class ChaletForm extends Component {
     const day = parsedDate.getDate();
 
     // Special pricing for December 20th to 31st
-    if (month === 12 && day >= 20 && day <= 31) return 19950;
+    if (month === 12 && day >= 20 && day <= 31) return 19500   ;
 
     // General pricing
-    if (month >= 1 && month <= 3) return 10800; // Jan to Mar
-    if (month >= 4 && month <= 5) return 13600; // Apr to May
-    if (month >= 6 && month <= 8) return 10800; // Jun to Aug
-    if (month >= 9 && month <= 12) return 13600; // Sep to Nov, Dec (excluding special pricing period)
+    if (month >= 1 && month <= 3) return 12000   ; // Jan to Mar
+    if (month >= 4 && month <= 5) return 15000   ; // Apr to May
+    if (month >= 6 && month <= 8) return 12000  ; // Jun to Aug
+    if (month >= 9 && month <= 12) return 15000   ; // Sep to Nov, Dec (excluding special pricing period)
 
     return 0;
   };
 
   calculateTotalPrice = () => {
-    const { name, lastname } = this.state;
+    const { name, lastname, guests } = this.state;
     if (!name || !lastname) return;
 
     const checkInDate = new Date(name);
@@ -63,7 +63,11 @@ class ChaletForm extends Component {
       currentDate.setDate(currentDate.getDate() + 1);
     }
 
-    this.setState({ totalPrice });
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 5 ? guestCount - 5 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    this.setState({ totalPrice: totalPrice + extraCharges });
   };
 
   componentDidUpdate(_, prevState) {
@@ -90,8 +94,7 @@ class ChaletForm extends Component {
       this.setState({ error: newError });
       return;
     }
-
-    const message = ` Hello,Book CHALET LA BONNE VIE For
+    const message = `Hello, Book CHALET LA BONNE VIE  For:
     Check-in Date: ${name}
     Check-out Date: ${lastname}
     Number of Guests: ${guests}
@@ -112,6 +115,20 @@ class ChaletForm extends Component {
     });
   };
 
+  handleGuestsChange = (e) => {
+    const value = e.target.value;
+    this.setState({
+      guests: value,
+      error: {
+        ...this.state.error,
+        guests:
+          value > 5
+            ? "Maximum 5 guest,Rs 650 extra per guest"
+            : "",
+      },
+    });
+  };
+
   render() {
     const { name, lastname, guests, error, totalPrice } = this.state;
 
@@ -122,6 +139,16 @@ class ChaletForm extends Component {
           .split("T")[0]
       : today;
 
+    const labelStyle = {
+      color: "black",
+      textAlign: "center",
+      display: "block",
+    };
+
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 5 ? guestCount - 5 : 0;
+    const extraCharges = extraGuestCount * 650;
+
     return (
       <div>
         <div className="wpo-contact-title">
@@ -131,13 +158,17 @@ class ChaletForm extends Component {
           <div className="row">
             <div className="col-lg-3 col-md-6 col-12">
               <div className="form-field">
+                <label htmlFor="checkInDate" style={labelStyle}>
+                  Check-in Date
+                </label>
                 <input
+                  id="checkInDate"
                   value={name}
                   onChange={this.changeHandler}
                   type="date"
                   name="name"
+                  placeholder="dd-mm-yyyy"
                   min={today}
-                  placeholder="Check-in Date"
                   style={{ backgroundColor: "white" }}
                 />
                 <p style={{ color: "red" }}>{error.name}</p>
@@ -145,13 +176,17 @@ class ChaletForm extends Component {
             </div>
             <div className="col-lg-3 col-md-6 col-12">
               <div className="form-field">
+                <label htmlFor="checkOutDate" style={labelStyle}>
+                  Check-out Date
+                </label>
                 <input
+                  id="checkOutDate"
                   value={lastname}
                   onChange={this.changeHandler}
                   type="date"
                   name="lastname"
+                  placeholder="dd-mm-yyyy"
                   min={minCheckoutDate}
-                  placeholder="Check-out Date"
                   style={{ backgroundColor: "white" }}
                 />
                 <p style={{ color: "red" }}>{error.lastname}</p>
@@ -159,33 +194,46 @@ class ChaletForm extends Component {
             </div>
             <div className="col-lg-3 col-md-6 col-12">
               <div className="form-field">
+                <label htmlFor="guests" style={labelStyle}>
+                  Number of Guests
+                </label>
                 <input
+                  id="guests"
                   value={guests}
-                  onChange={this.changeHandler}
+                  onChange={this.handleGuestsChange}
                   type="number"
                   name="guests"
-                  placeholder="No. of Guests"
+                  placeholder="0"
                   min="1"
-                  max='30'
+                  max="40"
                   style={{ backgroundColor: "white" }}
                 />
                 <p style={{ color: "red" }}>{error.guests}</p>
               </div>
             </div>
-            <div className="col-lg-3 col-md-12 col-12 d-flex justify-content-center">
+            <div
+              className="col-lg-3 col-md-12 col-12 d-flex justify-content-center"
+              style={{ marginTop: "20px" }}
+            >
               <div className="form-field">
                 <button
                   type="submit"
                   className="theme-btn"
                   style={{ borderRadius: "3px" }}
-                  
                 >
-                    Book Now
+                  Book Now
                 </button>
               </div>
             </div>
-            <div className="col-lg-12 col-md-12 col-12">
-              <h4>Total Price: Rs. {totalPrice}</h4>
+            <div
+              className="col-lg-12 col-md-12 col-12"
+              style={{ marginTop: "30px", textAlign: "center" }}
+            >
+              <h4>
+                Total Price: Rs. {totalPrice}
+                {extraCharges > 0 &&
+                  `  +${extraCharges}`}
+              </h4>
             </div>
           </div>
         </form>
@@ -193,5 +241,6 @@ class ChaletForm extends Component {
     );
   }
 }
+
 
 export default ChaletForm;
