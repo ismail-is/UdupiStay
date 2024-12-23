@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/UdupiStay/static/css/main.7ed59283.css",
-    "main.js": "/UdupiStay/static/js/main.8f633053.js",
+    "main.js": "/UdupiStay/static/js/main.0b5b1cf1.js",
     "static/js/787.884f7618.chunk.js": "/UdupiStay/static/js/787.884f7618.chunk.js",
     "static/media/Caterings.webp": "/UdupiStay/static/media/Caterings.4c4a78bdf051e6c40bff.webp",
     "static/media/Viewpoint.webp": "/UdupiStay/static/media/Viewpoint.77a2192cb1bf0f0347c9.webp",
@@ -106,11 +106,11 @@
     "static/media/slick.woff": "/UdupiStay/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/UdupiStay/index.html",
     "main.7ed59283.css.map": "/UdupiStay/static/css/main.7ed59283.css.map",
-    "main.8f633053.js.map": "/UdupiStay/static/js/main.8f633053.js.map",
+    "main.0b5b1cf1.js.map": "/UdupiStay/static/js/main.0b5b1cf1.js.map",
     "787.884f7618.chunk.js.map": "/UdupiStay/static/js/787.884f7618.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7ed59283.css",
-    "static/js/main.8f633053.js"
+    "static/js/main.0b5b1cf1.js"
   ]
 }
