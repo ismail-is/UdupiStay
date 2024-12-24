@@ -92,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
       "0%, 100%": { transform: "rotate(15deg)" },
       "50%": { transform: "rotate(10deg)" },
     },
+    
   }));
 
 

@@ -20,12 +20,13 @@ const BlogSectionS2 = (props) => {
                     <div className="row">
                         {blogs.slice(0,6).map((blog, Bitem) => (
                       
-                            <div className="col col-lg-4 col-md-6 col-12" key={Bitem}>
+                            <div className="col col-lg-6 col-md-6 col-12" key={Bitem}>
                                       <Link onClick={ClickHandler} to={`${blog.id}`}>
                                 <div className="wpo-blog-item">
                                     <div className="wpo-blog-img">
                                         <img src={blog.screens} alt=""/>
-                                        <div className="thumb">{blog.thumb}</div>
+                                        <div className="thumb1">{blog.thumb}</div>
+                                        <div className="thumb">Price Per Day:{blog.price}</div>
                                     </div>
                                     {/* <div className="wpo-blog-content">
                                         <ul>

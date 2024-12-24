@@ -108,7 +108,7 @@ const Contactpage = () => {
                         </div>
                         {/* Map 3 */}
                         <div className="col-lg-4 col-md-6 col-12 mb-4">
-                        <h4 style={{textAlign:'center'}}>OTHER VILLA</h4>
+                        <h4 style={{textAlign:'center'}}>OTHER HOME STAYS</h4>
                             <div className="wpo-contact-map" style={{ border: '3px solid #8EA429', borderRadius: '10px' }}>
                                 <iframe
                                     title="Map 3"

@@ -79,7 +79,7 @@ class ViewPointForm extends Component {
             {/* Check-in Date */}
             <div className="col-lg-4 col-md-6 col-12">
               <div className="form-field">
-                <label htmlFor="checkInDate" style={{ fontWeight: "bold" }}>
+                <label htmlFor="checkInDate" style={{ fontWeight: "bold" ,color:'black',textAlign:'center',display:'block'}}>
                   Check-in Date:
                 </label>
                 <input
@@ -98,7 +98,7 @@ class ViewPointForm extends Component {
             {/* Number of Houses */}
             <div className="col-lg-4 col-md-6 col-12">
               <div className="form-field">
-                <label htmlFor="numHouses" style={{ fontWeight: "bold" }}>
+                <label htmlFor="numHouses" style={{ fontWeight: "bold",color:'black',textAlign:'center',display:'block' }}>
                   Number Of Hour:
                 </label>
                 <input

@@ -797,6 +797,17 @@
 				font-size: 14px;
 				
 			}
+			.thumb1{
+				position: absolute;
+				right: 10px;
+				bottom: 15px;
+				padding: 7px 25px 6px;
+				background: $theme-primary-color;
+				color: $white;
+				text-transform: uppercase;
+				font-size: 14px;
+				
+			}
             img{
                 width: 100%;
 				-webkit-filter: grayscale(0);

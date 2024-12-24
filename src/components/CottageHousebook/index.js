@@ -63,6 +63,23 @@ const useStyles = makeStyles((theme) => ({
       "0%, 100%": { transform: "rotate(15deg)" },
       "50%": { transform: "rotate(10deg)" },
     },
+    checkInOutBadge: {
+      display: "inline-block",
+      padding: "10px 20px",
+      // backgroundColor: "#f1c40f", // Golden badge color
+      color: "#0D0845",
+      fontWeight: "bold",
+      fontSize: "14px",
+      borderRadius: "1px",
+      textAlign: "center",
+      boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
+      margin: "10px auto",
+      // transform: "scale(1)",
+      // transition: "transform 0.3s ease",
+      // "&:hover": {
+      //   transform: "scale(1.1)",
+      // },
+    },
   }));
 
 const CottageHousebook = () => {
@@ -99,7 +116,9 @@ const CottageHousebook = () => {
                 <div className="row">
                 
                     <div className="col col-lg-12" >
-                       
+                    <div className={classes.checkInOutBadge}>
+              CHECK IN TIME 12.30 PM <br /> CHECK OUT TIME 10.00 AM
+            </div>
                         <div className="wpo-contact-form-area" style={{ borderRadius: "4px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)", background: "linear-gradient(232deg, #96b01280, #96b012)", }}>
                             <div className={classes.ribbon1}>Book Now to<br/> Get 10% Off</div>
                             <h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5>
