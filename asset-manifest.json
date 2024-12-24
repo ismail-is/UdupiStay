@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/UdupiStay/static/css/main.7ed59283.css",
-    "main.js": "/UdupiStay/static/js/main.0b5b1cf1.js",
+    "main.css": "/UdupiStay/static/css/main.6a11a5da.css",
+    "main.js": "/UdupiStay/static/js/main.000d0ea3.js",
     "static/js/787.884f7618.chunk.js": "/UdupiStay/static/js/787.884f7618.chunk.js",
     "static/media/Caterings.webp": "/UdupiStay/static/media/Caterings.4c4a78bdf051e6c40bff.webp",
     "static/media/Viewpoint.webp": "/UdupiStay/static/media/Viewpoint.77a2192cb1bf0f0347c9.webp",
@@ -105,12 +105,12 @@
     "static/media/slick.ttf": "/UdupiStay/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/UdupiStay/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/UdupiStay/index.html",
-    "main.7ed59283.css.map": "/UdupiStay/static/css/main.7ed59283.css.map",
-    "main.0b5b1cf1.js.map": "/UdupiStay/static/js/main.0b5b1cf1.js.map",
+    "main.6a11a5da.css.map": "/UdupiStay/static/css/main.6a11a5da.css.map",
+    "main.000d0ea3.js.map": "/UdupiStay/static/js/main.000d0ea3.js.map",
     "787.884f7618.chunk.js.map": "/UdupiStay/static/js/787.884f7618.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ed59283.css",
-    "static/js/main.0b5b1cf1.js"
+    "static/css/main.6a11a5da.css",
+    "static/js/main.000d0ea3.js"
   ]
 }
