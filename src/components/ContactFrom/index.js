@@ -47,9 +47,21 @@ class ContactForm extends Component {
 
     sendWhatsAppMessage = () => {
         const { name, email, subject, guests, message } = this.state;
+        const error = {};
+
+        if (name === '') error.name = "Please enter your name";
+        if (email === '') error.email = "Please enter your email";
+        if (subject === '') error.subject = "Please select villa";
+        if (guests === '') error.guests = "Please enter the number of guests";
+        if (message === '') error.message = "Please enter your message";
+
+        if (Object.keys(error).length > 0) {
+            this.setState({ error });
+            return; // Stop execution if validation fails
+        }
+
         const phone = "8971220576"; // Your WhatsApp number
         const whatsappMessage = `Hello, \nName: ${name}.\nEmail: ${email}.\nHome Stay: "${subject}".\nNumber of Guests: ${guests}.\nMessage: ${message}`;
-    
         const whatsappLink = `https://wa.me/+918971220576?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappLink, "_blank");
     };
@@ -81,7 +93,7 @@ class ContactForm extends Component {
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
                             <select value={subject} onChange={this.changeHandler} name="subject" className="form-control">
-                                <option value="">Select an option</option>
+                                <option value="">Choose Villa</option>
                                 <option>WHITE HOUSE</option>
                                 <option>GARDEN VILLA</option>
                                 <option>COTTAGE HOUSE</option>
