@@ -47,10 +47,10 @@ class ContactForm extends Component {
 
     sendWhatsAppMessage = () => {
         const { name, email, subject, guests, message } = this.state;
-        const phone = "7483156464"; // Your WhatsApp number
+        const phone = "8971220576"; // Your WhatsApp number
         const whatsappMessage = `Hello, \nName: ${name}.\nEmail: ${email}.\nHome Stay: "${subject}".\nNumber of Guests: ${guests}.\nMessage: ${message}`;
     
-        const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappLink = `https://wa.me/+918971220576?text=${encodeURIComponent(whatsappMessage)}`;
         window.open(whatsappLink, "_blank");
     };
 
