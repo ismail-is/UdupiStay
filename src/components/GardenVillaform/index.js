@@ -4,7 +4,7 @@ class GardenVillaform extends Component {
   state = {
     name: "", // Check-in date
     lastname: "", // Check-out date
-    guests: "",
+    guests: "20", // Default value for guests
     error: {},
     totalPrice: 0,
   };
@@ -33,13 +33,13 @@ class GardenVillaform extends Component {
     const day = parsedDate.getDate();
 
     // Special pricing for December 20th to 31st
-    if (month === 12 && day >= 20 && day <= 31) return 21950 ;
+    if (month === 12 && day >= 20 && day <= 31) return 21950;
 
     // General pricing
-    if (month >= 1 && month <= 3) return 9800 ; // Jan to Mar
-    if (month >= 4 && month <= 5) return 12500 ; // Apr to May
-    if (month >= 6 && month <= 8) return 9800 ; // Jun to Aug
-    if (month >= 9 && month <= 12) return 12500 ; // Sep to Nov, Dec (excluding special pricing period)
+    if (month >= 1 && month <= 3) return 9800; // Jan to Mar
+    if (month >= 4 && month <= 5) return 12500; // Apr to May
+    if (month >= 6 && month <= 8) return 9800; // Jun to Aug
+    if (month >= 9 && month <= 12) return 12500; // Sep to Nov, Dec (excluding special pricing period)
 
     return 0;
   };
@@ -70,16 +70,6 @@ class GardenVillaform extends Component {
     this.setState({ totalPrice: totalPrice + extraCharges });
   };
 
-  componentDidUpdate(_, prevState) {
-    if (
-      (prevState.name !== this.state.name || prevState.lastname !== this.state.lastname) &&
-      this.state.name &&
-      this.state.lastname
-    ) {
-      this.calculateTotalPrice();
-    }
-  }
-
   submitHandler = (e) => {
     e.preventDefault();
     const { name, lastname, guests, totalPrice } = this.state;
@@ -94,11 +84,17 @@ class GardenVillaform extends Component {
       this.setState({ error: newError });
       return;
     }
-    const message = `Hello, Book WhiteVilla For:
+
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 20 ? guestCount - 20 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    const message = `Hello, Book GARDEN VILLA For:
     Check-in Date: ${name}
     Check-out Date: ${lastname}
     Number of Guests: ${guests}
-    Total Price: Rs. ${totalPrice}`;
+    Total Price: Rs. ${totalPrice} 
+    Extra Charges: Rs. ${extraCharges}`;
 
     const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(
       message
@@ -109,7 +105,7 @@ class GardenVillaform extends Component {
     this.setState({
       name: "",
       lastname: "",
-      guests: "",
+      guests: "21", // Reset to default
       error: {},
       totalPrice: 0,
     });
@@ -123,7 +119,7 @@ class GardenVillaform extends Component {
         ...this.state.error,
         guests:
           value > 20
-            ? "Maximum 20 guest,Rs 650 extra per guest"
+            ? "Maximum 20 guests, Rs 650 extra per guest"
             : "",
       },
     });

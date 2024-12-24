@@ -4,7 +4,7 @@ class CottageHouseform extends Component {
   state = {
     name: "", // Check-in date
     lastname: "", // Check-out date
-    guests: "",
+    guests: "8", // Default value for guests
     error: {},
     totalPrice: 0,
   };
@@ -33,13 +33,13 @@ class CottageHouseform extends Component {
     const day = parsedDate.getDate();
 
     // Special pricing for December 20th to 31st
-    if (month === 12 && day >= 20 && day <= 31) return 11900 ;
+    if (month === 12 && day >= 20 && day <= 31) return 11900;
 
     // General pricing
-    if (month >= 1 && month <= 3) return 5800 ; // Jan to Mar
-    if (month >= 4 && month <= 5) return 7500 ; // Apr to May
-    if (month >= 6 && month <= 8) return 5800 ; // Jun to Aug
-    if (month >= 9 && month <= 12) return 7500 ; // Sep to Nov, Dec (excluding special pricing period)
+    if (month >= 1 && month <= 3) return 5800; // Jan to Mar
+    if (month >= 4 && month <= 5) return 7500; // Apr to May
+    if (month >= 6 && month <= 8) return 5800; // Jun to Aug
+    if (month >= 9 && month <= 12) return 7500; // Sep to Nov, Dec (excluding special pricing period)
 
     return 0;
   };
@@ -94,22 +94,26 @@ class CottageHouseform extends Component {
       this.setState({ error: newError });
       return;
     }
-    const message = `Hello, Book 	COTTAGE HOUSE For:
-    Check-in Date: ${name}
-    Check-out Date: ${lastname}
-    Number of Guests: ${guests}
-    Total Price: Rs. ${totalPrice}`;
 
-    const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(
-      message
-    )}`;
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 8 ? guestCount - 8 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    // Construct the message
+    let message = `Hello, Book COTTAGE HOUSE For:\nCheck-in Date: ${name}\nCheck-out Date: ${lastname}\nNumber of Guests: ${guests}\nTotal Price: Rs. ${totalPrice}`;
+
+    if (extraCharges > 0) {
+      message += `\nExtra Charges : ${extraCharges}`;
+    }
+
+    const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
 
     this.setState({
       name: "",
       lastname: "",
-      guests: "",
+      guests: "8", // Resetting to default value after form submission
       error: {},
       totalPrice: 0,
     });
@@ -123,7 +127,7 @@ class CottageHouseform extends Component {
         ...this.state.error,
         guests:
           value > 8
-            ? "Maximum 8 guest,Rs 650 extra per guest"
+            ? "Maximum 8 guest, Rs 650 extra per guest"
             : "",
       },
     });
@@ -231,8 +235,7 @@ class CottageHouseform extends Component {
             >
               <h4>
                 Total Price: Rs. {totalPrice}
-                {extraCharges > 0 &&
-                  `  +${extraCharges}`}
+                {extraCharges > 0 && ` + Rs. ${extraCharges}`}
               </h4>
             </div>
           </div>
@@ -241,4 +244,5 @@ class CottageHouseform extends Component {
     );
   }
 }
+
 export default CottageHouseform;

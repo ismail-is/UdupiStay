@@ -4,7 +4,7 @@ class SunriseHomeform extends Component {
   state = {
     name: "", // Check-in date
     lastname: "", // Check-out date
-    guests: "",
+    guests: "6", // Set default value to 6
     error: {},
     totalPrice: 0,
   };
@@ -33,13 +33,13 @@ class SunriseHomeform extends Component {
     const day = parsedDate.getDate();
 
     // Special pricing for December 20th to 31st
-    if (month === 12 && day >= 20 && day <= 31) return 9900   ;
+    if (month === 12 && day >= 20 && day <= 31) return 9900;
 
     // General pricing
-    if (month >= 1 && month <= 3) return 4800   ; // Jan to Mar
-    if (month >= 4 && month <= 5) return 6500   ; // Apr to May
-    if (month >= 6 && month <= 8) return 4800  ; // Jun to Aug
-    if (month >= 9 && month <= 12) return 6500   ; // Sep to Nov, Dec (excluding special pricing period)
+    if (month >= 1 && month <= 3) return 4800; // Jan to Mar
+    if (month >= 4 && month <= 5) return 6500; // Apr to May
+    if (month >= 6 && month <= 8) return 4800; // Jun to Aug
+    if (month >= 9 && month <= 12) return 6500; // Sep to Nov, Dec (excluding special pricing period)
 
     return 0;
   };
@@ -94,11 +94,19 @@ class SunriseHomeform extends Component {
       this.setState({ error: newError });
       return;
     }
+
+    // Calculate extra charges for guests above 6
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 6 ? guestCount - 6 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    // Build the message with extra charges included
     const message = `Hello, Book SUNRISE HOME For:
     Check-in Date: ${name}
     Check-out Date: ${lastname}
     Number of Guests: ${guests}
-    Total Price: Rs. ${totalPrice}`;
+    Total Price: Rs. ${totalPrice}
+    ${extraCharges > 0 ? `Extra Charges: Rs. ${extraCharges}` : ''}`;
 
     const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(
       message
@@ -109,7 +117,7 @@ class SunriseHomeform extends Component {
     this.setState({
       name: "",
       lastname: "",
-      guests: "",
+      guests: "6", // Reset guests to 6 after booking
       error: {},
       totalPrice: 0,
     });
@@ -123,7 +131,7 @@ class SunriseHomeform extends Component {
         ...this.state.error,
         guests:
           value > 6
-            ? "Maximum 6 guest,Rs 650 extra per guest"
+            ? "Maximum 6 guests, Rs 650 extra per guest"
             : "",
       },
     });

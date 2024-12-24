@@ -4,7 +4,7 @@ class ChaletForm extends Component {
   state = {
     name: "", // Check-in date
     lastname: "", // Check-out date
-    guests: "",
+    guests: "5", // Default value for guests
     error: {},
     totalPrice: 0,
   };
@@ -33,13 +33,13 @@ class ChaletForm extends Component {
     const day = parsedDate.getDate();
 
     // Special pricing for December 20th to 31st
-    if (month === 12 && day >= 20 && day <= 31) return 19500   ;
+    if (month === 12 && day >= 20 && day <= 31) return 19500;
 
     // General pricing
-    if (month >= 1 && month <= 3) return 12000   ; // Jan to Mar
-    if (month >= 4 && month <= 5) return 15000   ; // Apr to May
-    if (month >= 6 && month <= 8) return 12000  ; // Jun to Aug
-    if (month >= 9 && month <= 12) return 15000   ; // Sep to Nov, Dec (excluding special pricing period)
+    if (month >= 1 && month <= 3) return 12000; // Jan to Mar
+    if (month >= 4 && month <= 5) return 15000; // Apr to May
+    if (month >= 6 && month <= 8) return 12000; // Jun to Aug
+    if (month >= 9 && month <= 12) return 15000; // Sep to Nov, Dec (excluding special pricing period)
 
     return 0;
   };
@@ -94,22 +94,28 @@ class ChaletForm extends Component {
       this.setState({ error: newError });
       return;
     }
-    const message = `Hello, Book CHALET LA BONNE VIE  For:
+
+    // Calculate extra charges for guests over 5
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 5 ? guestCount - 5 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    // Create message with total price and extra charges
+    const extraChargeMessage = extraCharges > 0 ? ` +   Extra Charges: Rs ${extraCharges} ` : "";
+    const message = `Hello, Book CHALET LA BONNE VIE For:
     Check-in Date: ${name}
     Check-out Date: ${lastname}
     Number of Guests: ${guests}
-    Total Price: Rs. ${totalPrice}`;
+    Total Price: Rs. ${totalPrice}${extraChargeMessage}`;
 
-    const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(
-      message
-    )}`;
+    const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
 
     this.setState({
       name: "",
       lastname: "",
-      guests: "",
+      guests: "5", // Reset to default value
       error: {},
       totalPrice: 0,
     });
@@ -123,7 +129,7 @@ class ChaletForm extends Component {
         ...this.state.error,
         guests:
           value > 5
-            ? "Maximum 5 guest,Rs 650 extra per guest"
+            ? "Maximum 5 guests, Rs 650 extra per guest"
             : "",
       },
     });
@@ -231,8 +237,7 @@ class ChaletForm extends Component {
             >
               <h4>
                 Total Price: Rs. {totalPrice}
-                {extraCharges > 0 &&
-                  `  +${extraCharges}`}
+                {extraCharges > 0 && ` +${extraCharges}`}
               </h4>
             </div>
           </div>
@@ -241,6 +246,5 @@ class ChaletForm extends Component {
     );
   }
 }
-
 
 export default ChaletForm;

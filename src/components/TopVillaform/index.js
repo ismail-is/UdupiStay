@@ -4,7 +4,7 @@ class TopVillaform extends Component {
   state = {
     name: "", // Check-in date
     lastname: "", // Check-out date
-    guests: "",
+    guests: 10, // Default number of guests set to 10
     error: {},
     totalPrice: 0,
   };
@@ -33,13 +33,13 @@ class TopVillaform extends Component {
     const day = parsedDate.getDate();
 
     // Special pricing for December 20th to 31st
-    if (month === 12 && day >= 20 && day <= 31) return 12500  ;
+    if (month === 12 && day >= 20 && day <= 31) return 12500;
 
     // General pricing
-    if (month >= 1 && month <= 3) return 6200  ; // Jan to Mar
-    if (month >= 4 && month <= 5) return 7800  ; // Apr to May
-    if (month >= 6 && month <= 8) return 9800 ; // Jun to Aug
-    if (month >= 9 && month <= 12) return 7800  ; // Sep to Nov, Dec (excluding special pricing period)
+    if (month >= 1 && month <= 3) return 6200; // Jan to Mar
+    if (month >= 4 && month <= 5) return 7800; // Apr to May
+    if (month >= 6 && month <= 8) return 9800; // Jun to Aug
+    if (month >= 9 && month <= 12) return 7800; // Sep to Nov, Dec (excluding special pricing period)
 
     return 0;
   };
@@ -94,22 +94,26 @@ class TopVillaform extends Component {
       this.setState({ error: newError });
       return;
     }
-    const message = `Hello, Book HILL TOP VILLA  For:
-    Check-in Date: ${name}
-    Check-out Date: ${lastname}
-    Number of Guests: ${guests}
-    Total Price: Rs. ${totalPrice}`;
 
-    const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(
-      message
-    )}`;
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 10 ? guestCount - 10 : 0;
+    const extraCharges = extraGuestCount * 650;
+
+    const message = `Hello, Book HILL TOP VILLA For:
+      Check-in Date: ${name}
+      Check-out Date: ${lastname}
+      Number of Guests: ${guests}
+      Total Price: Rs. ${totalPrice}
+      ${extraCharges > 0 ? `Extra Charges: Rs. ${extraCharges}` : ''}`; // Add extra charges to the message if applicable
+
+    const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
 
     this.setState({
       name: "",
       lastname: "",
-      guests: "",
+      guests: 10, // Reset guests to default 10 after submission
       error: {},
       totalPrice: 0,
     });
@@ -123,7 +127,7 @@ class TopVillaform extends Component {
         ...this.state.error,
         guests:
           value > 10
-            ? "Maximum 10 guest,Rs 650 extra per guest"
+            ? "Maximum 10 guest, Rs 650 extra per guest"
             : "",
       },
     });
@@ -199,7 +203,7 @@ class TopVillaform extends Component {
                 </label>
                 <input
                   id="guests"
-                  value={guests}
+                  value={guests || 10} // Default value set to 10 if guests is empty
                   onChange={this.handleGuestsChange}
                   type="number"
                   name="guests"

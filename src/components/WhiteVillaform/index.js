@@ -5,7 +5,7 @@ class WhiteVillaForm extends Component {
   state = {
     name: "", // Check-in date
     lastname: "", // Check-out date
-    guests: "",
+    guests: "10", // Default guest count is 10
     error: {},
     totalPrice: 0,
   };
@@ -85,6 +85,10 @@ class WhiteVillaForm extends Component {
     e.preventDefault();
     const { name, lastname, guests, totalPrice } = this.state;
 
+    const guestCount = parseInt(guests, 10);
+    const extraGuestCount = guestCount > 10 ? guestCount - 10 : 0;
+    const extraCharges = extraGuestCount * 650;
+
     const newError = {};
 
     if (!name) newError.name = "Please select your check-in date";
@@ -95,11 +99,13 @@ class WhiteVillaForm extends Component {
       this.setState({ error: newError });
       return;
     }
+
     const message = `Hello, Book WhiteVilla For:
     Check-in Date: ${name}
     Check-out Date: ${lastname}
     Number of Guests: ${guests}
-    Total Price: Rs. ${totalPrice}`;
+    Total Price: Rs. ${totalPrice}
+    ${extraCharges > 0 ? `Extra Charges: Rs. ${extraCharges}` : ""}`;
 
     const whatsappURL = `https://wa.me/+918971220576?text=${encodeURIComponent(
       message
@@ -110,7 +116,7 @@ class WhiteVillaForm extends Component {
     this.setState({
       name: "",
       lastname: "",
-      guests: "",
+      guests: "10",
       error: {},
       totalPrice: 0,
     });
@@ -124,7 +130,7 @@ class WhiteVillaForm extends Component {
         ...this.state.error,
         guests:
           value > 10
-            ? "Maximum 10 guest,Rs 650 extra per guest"
+            ? "Maximum 10  guest,Rs 650 extra per guest"
             : "",
       },
     });
@@ -232,8 +238,7 @@ class WhiteVillaForm extends Component {
             >
               <h4>
                 Total Price: Rs. {totalPrice}
-                {extraCharges > 0 &&
-                  `  +${extraCharges}`}
+                {extraCharges > 0 && `  +${extraCharges}`}
               </h4>
             </div>
           </div>

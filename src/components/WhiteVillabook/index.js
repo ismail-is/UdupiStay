@@ -1,6 +1,7 @@
 import React from "react";
 import WhiteVillaform from "../WhiteVillaform";
 import { makeStyles } from "@material-ui/core";
+import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa"; // Using FontAwesome icons
 
 const useStyles = makeStyles((theme) => ({
   sticker: {
@@ -52,11 +53,99 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "5px",
     boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
     animation: "rotateRibbon 2s infinite",
-   
   },
-  "@keyframes rotateRibbon": {
-    "0%, 100%": { transform: "rotate(15deg)" },
-    "50%": { transform: "rotate(10deg)" },
+  ribbon3: {
+    position: "absolute",
+    bottom: "15px",
+    right: "1px",
+    background: "#ffd700",
+    color: "#333",
+    fontWeight: "bold",
+    fontSize: "14px",
+    padding: "5px 10px",
+    transform: "rotate(0deg)",
+    borderRadius: "5px",
+    boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
+    animation: "rotateRibbon 2s infinite",
+    "&:hover": {
+      transform: "rotate(10deg)",
+    },
+  },
+
+  // Badge style for Check In and Check Out label
+  checkInOutBadge: {
+    display: "inline-block",
+    padding: "10px 20px",
+    backgroundColor: "#f1c40f", // Golden badge color
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: "18px",
+    borderRadius: "50px",
+    textAlign: "center", // Center text
+    boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+    margin: "20px auto",
+    transform: "scale(1)",
+    transition: "transform 0.3s ease",
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+  },
+
+  // Adding some creative background and design to the section
+  sectionStyle: {
+    marginTop: "-90px",
+    marginBottom: "150px",
+    background: "linear-gradient(to top right, #ff8c00, #e52e71)", // Gradient background
+    padding: "50px 0",
+    borderRadius: "15px",
+    boxShadow: "0px 15px 30px rgba(0, 0, 0, 0.1)",
+  },
+
+  // Form area style with more creativity
+  formArea: {
+    borderRadius: "10px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
+    background: "linear-gradient(232deg, #96b01280, #96b012)",
+    padding: "40px",
+    position: "relative",
+  },
+
+  // Price text style
+  priceText: {
+    fontSize: "22px",
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
+    marginBottom: "20px",
+    animation: "fadeIn 2s ease-in-out", // Adding fade-in animation for price text
+  },
+
+  "@keyframes fadeIn": {
+    "0%": {
+      opacity: 0,
+    },
+    "100%": {
+      opacity: 1,
+    },
+  },
+
+  // Button Style for interaction
+  buttonStyle: {
+    display: "inline-block",
+    padding: "12px 30px",
+    backgroundColor: "#f1c40f",
+    color: "#fff",
+    fontSize: "16px",
+    fontWeight: "bold",
+    border: "none",
+    borderRadius: "50px",
+    cursor: "pointer",
+    marginTop: "20px",
+    transition: "background-color 0.3s ease, transform 0.3s ease",
+    "&:hover": {
+      backgroundColor: "#e52e71",
+      transform: "scale(1.05)",
+    },
   },
 }));
 
@@ -90,26 +179,21 @@ const WhiteVillabook = () => {
   const currentPrice = getCurrentPrice();
 
   return (
-    <section
-      className="wpo-contact-pg-section section-padding"
-      style={{ marginTop: "-90px", marginBottom: "150px" }}
-    >
+    <section className={classes.sectionStyle}>
       <div className="container">
         <div className="row">
           <div className="col col-lg-12">
-            <div
-              className="wpo-contact-form-area"
-              style={{
-                borderRadius: "4px",
-                boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)",
-                background: "linear-gradient(232deg, #96b01280, #96b012)",
-              }}
-            >
+            <div className={classes.checkInOutBadge}>
+              <FaRegClock style={{ marginRight: "10px" }} /> CHECK IN TIME 12.30 PM & <br />
+              <FaRegCalendarAlt style={{ marginRight: "10px" }} /> CHECK OUT TIME 10.00 AM
+            </div>
+            <div className={classes.formArea}>
               <div className={classes.ribbon1}>
                 Book Now to<br /> Get 10% Off
               </div>
-              <h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5>
+              <h5 className={classes.priceText}>Price Per Day: {currentPrice}</h5>
               <WhiteVillaform />
+              <button className={classes.buttonStyle}>Book Now</button>
             </div>
           </div>
         </div>
