@@ -48,9 +48,34 @@ const BlogSectionS2 = (props) => {
                                 </Link>
                             </div>
                         ))}
+
+{blogs.slice(6,7).map((blog, Bitem) => (
+                            <div className="col col-lg-12 col-md-6 col-12" key={Bitem}>
+                                      <Link onClick={ClickHandler} to={`${blog.id}`}>
+                                <div className="wpo-blog-item">
+                                    <div className="wpo-blog-img">
+                                        <img src={blog.screens} alt=""/>
+                                        <div className="thumb1">{blog.thumb}</div>
+                                        <div className="thumb">Price Per Hour:{blog.price}</div>
+                                        
+                                        
+                                    </div>
+                                    <div className="wpo-blog-content">
+                                        <ul>
+                                            <li></li>
+                                            <li>{blog.author}</li>
+                                        </ul>
+                                        <h2><Link onClick={ClickHandler} to={`${blog.id}`}>{blog.title}</Link></h2>
+                                        <p>{blog.description}</p>
+                                        {/* <h5>Price Per Day:{blog.price}</h5> */}
+                                    </div>
+                                </div>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
                 </div>
-                  <div className="wpo-blog-items" >
+                  {/* <div className="wpo-blog-items" >
                   <Link   to={`/ViewPoint`}>
                                             <div cclassName="col col-lg-4 col-md-6 col-12" >
                                                 <div className="wpo-blog-item" >
@@ -69,7 +94,7 @@ const BlogSectionS2 = (props) => {
                                                 </div>
                                             </div>
                                             </Link>
-                                </div>
+                                </div> */}
             </div>
             <div className="vector-1">
                 <img src={bShape1} alt=""/>

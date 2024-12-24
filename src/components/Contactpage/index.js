@@ -63,13 +63,14 @@ const Contactpage = () => {
                         {/* Contact Title */}
                         <div className="wpo-contact-title">
                             <h2>Have Any Question?</h2>
-                            <p>It is a long established fact that a reader will be distracted by the content of a page when looking.</p>
+                            {/* <p>It is a long established fact that a reader will be distracted by the content of a page when looking.</p> */}
                         </div>
 
                         {/* Contact Form */}
-                        <div className="wpo-contact-form-area">
+                        {/* <div className="wpo-contact-form-area">
                             <ContactForm />
-                        </div>
+                        </div> */}
+                        <ContactForm />
                     </div>
                 </div>
             </div>

@@ -27,7 +27,7 @@ const FunFact = (props) => {
 
     return (
 
-        <section className={`wpo-fun-fact-section pb-120 ${props.fnClass}`}>
+        <section className={`wpo-fun-fact-section pb-120 ${props.fnClass}`} style={{marginTop:'30px',marginBottom:'-140px'}}>
             <div className="container">
                 <div className="row">
                     <div className="col col-xs-12">

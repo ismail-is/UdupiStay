@@ -1,109 +1,87 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
 
 class ContactForm extends Component {
-
-
     state = {
         name: '',
         email: '',
         subject: '',
-        lastname: '',
-        events: '',
-        notes: '',
+        guests: '', // Updated state property
+        message: '',
         error: {}
-    }
-
+    };
 
     changeHandler = (e) => {
         const error = this.state.error;
-        error[e.target.name] = ''
+        error[e.target.name] = '';
 
         this.setState({
             [e.target.name]: e.target.value,
             error
-        })
-    }
+        });
+    };
 
-    subimtHandler = (e) => {
+    submitHandler = (e) => {
         e.preventDefault();
 
-        const { name,
-            email,
-            subject,
-            lastname,
-            events,
-            notes, error } = this.state;
+        const { name, email, subject, guests, message, error } = this.state;
 
-        if (name === '') {
-            error.name = "Please enter your name";
-        }
-        if (email === '') {
-            error.email = "Please enter your email";
-        }
-        if (subject === '') {
-            error.subject = "Please enter your subject";
-        }
-        if (lastname === '') {
-            error.lastname = "Please enter your Lastname";
-        }
-        if (events === '') {
-            error.events = "Select your event list";
-        }
-        if (notes === '') {
-            error.notes = "Please enter your note";
-        }
+        if (name === '') error.name = "Please enter your name";
+        if (email === '') error.email = "Please enter your email";
+        if (subject === '') error.subject = "Please select a subject";
+        if (guests === '') error.guests = "Please enter the number of guests";
+        if (message === '') error.message = "Please enter your message";
 
-
-        if (error) {
-            this.setState({
-                error
-            })
-        }
-        if (error.name === '' && error.email === '' && error.email === '' && error.lastname === '' && error.subject === '' && error.events === '' && error.notes === '') {
+        if (Object.keys(error).length > 0) {
+            this.setState({ error });
+        } else {
             this.setState({
                 name: '',
                 email: '',
                 subject: '',
-                events: '',
-                notes: '',
+                guests: '',
+                message: '',
                 error: {}
-            })
+            });
         }
-    }
+    };
 
-    render(){
-        const { name,
-            email,
-            subject,
-            lastname,
-            error } = this.state;
+    sendWhatsAppMessage = () => {
+        const { name, email, subject, guests, message } = this.state;
+        const phone = "7483156464"; // Your WhatsApp number
+        const whatsappMessage = `Hello, \nName: ${name}.\nEmail: ${email}.\nHome Stay: "${subject}".\nNumber of Guests: ${guests}.\nMessage: ${message}`;
+    
+        const whatsappLink = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(whatsappLink, "_blank");
+    };
 
-        return(
-            <form onSubmit={this.subimtHandler} className="form">
+    render() {
+        const { name, email, subject, guests, message, error } = this.state;
+
+        return (
+            <form onSubmit={this.submitHandler} className="form">
                 <div className="row justify-content-center">
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <input value={name} onChange={this.changeHandler} type="text" name="name" placeholder="Name"/>
+                            <input value={name} onChange={this.changeHandler} type="text" name="name" placeholder="Name" />
                             <p>{error.name ? error.name : ''}</p>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <input value={lastname} onChange={this.changeHandler} type="text" name="lastname" placeholder="Lastname"/>
-                            <p>{error.lastname ? error.lastname : ''}</p>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-12">
-                        <div className="form-field">
-                            <input onChange={this.changeHandler} value={email} type="email" name="email" placeholder="Email"/>
+                            <input value={email} onChange={this.changeHandler} type="email" name="email" placeholder="Email" />
                             <p>{error.email ? error.email : ''}</p>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <select className="form-control" onChange={this.changeHandler} value={subject} type="text" name="subject">
-                                <option >Home Stay</option>
+                            <input value={guests} onChange={this.changeHandler} type="number" name="guests" placeholder="Number of Guests" />
+                            <p>{error.guests ? error.guests : ''}</p>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-12">
+                        <div className="form-field">
+                            <select value={subject} onChange={this.changeHandler} name="subject" className="form-control">
+                                <option value="">Select an option</option>
                                 <option>WHITE HOUSE</option>
                                 <option>GARDEN VILLA</option>
                                 <option>COTTAGE HOUSE</option>
@@ -117,18 +95,20 @@ class ContactForm extends Component {
                     </div>
                     <div className="col-lg-12">
                         <div className="form-field">
-                            <textarea name="message" placeholder="Message"></textarea>
+                            <textarea value={message} onChange={this.changeHandler} name="message" placeholder="Message"></textarea>
+                            <p>{error.message ? error.message : ''}</p>
                         </div>
                     </div>
                     <div className="col-lg-12">
                         <div className="form-submit">
-                            <button type="submit" className="theme-btn">Send Message</button>
+                            {/* <button type="submit" className="theme-btn">Send Message</button> */}
+                            <button type="button" onClick={this.sendWhatsAppMessage} className="theme-btn" style={{ marginLeft: '10px' }}>Send via WhatsApp</button>
                         </div>
                     </div>
                 </div>
             </form>
-        )
+        );
     }
-
 }
-export default  ContactForm;
+
+export default ContactForm;
