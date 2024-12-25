@@ -10,7 +10,7 @@ import TeamSection from '../../components/TeamSection';
 import Testimonial from '../../components/Testimonial';
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
-import Logo from '../../images/allimg/greenlogo.webp'
+import Logo from '../../images/allimg/logo/logo black.png'
 import abimg from '../../images/about.jpg'
 import WhiteVillabook from '../../components/WhiteVillabook';
 import Discuss from '../ServiceSinglePage/discuss';

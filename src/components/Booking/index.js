@@ -30,6 +30,7 @@ const Booking = () => {
     
   }}
 >
+    
   <BookingForm />
 </div>
 

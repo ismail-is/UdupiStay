@@ -135,7 +135,7 @@ const getPriceForCurrentPeriod = (priceObj) => {
     },
     {
       id: '/ChaletLabonne',
-      title: 'Chalet La Bonne Vie',
+      title: 'CHALET LA BONNE VIE',
       thumb: '10+ Capacity  ',
       screens: Chalet,
       description: '2-BHK Modern house, Bird sanctuary and Farm.',

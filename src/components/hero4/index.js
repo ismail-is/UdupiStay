@@ -14,6 +14,7 @@ import chalet from '../../images/allimg/HomeSlider/chalet.webp'
 import cottage from '../../images/allimg/HomeSlider/cottage.webp' 
 import whiteHouse from '../../images/allimg/HomeSlider/whiteHouse.webp' 
 import hilltop from '../../images/allimg/HomeSlider/hilltop.webp' 
+import Arrow from "../Arrow";
 
 
 
@@ -123,7 +124,7 @@ class Hero4 extends Component {
                                     <div className="container-fluid">
                                         <div className="slide-content">
                                             <div className="slide-title">
-                                                <h2>CHALET LABONNE</h2>
+                                                <h2>CHALET LA BONNE VIE</h2>
                                             </div>
                                             <div className="clearfix"></div>
                                             <div className="slide-btns">
@@ -150,7 +151,9 @@ class Hero4 extends Component {
                             </div>
                         </Slider>
                     </div>
+                    <div><Arrow/></div>
                 </div>
+              
             </section>
         )
     }

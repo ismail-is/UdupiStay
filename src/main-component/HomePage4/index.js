@@ -15,14 +15,16 @@ import About from '../../components/about';
 import abimg from '../../images/about.jpg'
 import BookingForm from '../../components/BookingForm';
 import Booking from '../../components/Booking';
+import Arrow from '../../components/Arrow';
 
 
 const HomePage4 =() => {
     return(
         <Fragment>
             <Navbar2 Logo={Logo} hclass={'wpo-header-style-3'}/>
+           
             <Hero4/>
-            
+           
             <Booking/>
             <About4/>
             <BlogSection/>

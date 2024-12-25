@@ -4,7 +4,7 @@ import PageTitle from '../../components/pagetitle'
 import Contactpage from '../../components/Contactpage'
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
-import Logo from '../../images/allimg/greenlogo.webp'
+import Logo from '../../images/allimg/logo/logo black.png'
 import Chalettop from '../../images/allimg/top/Chalettop.webp'
 
 

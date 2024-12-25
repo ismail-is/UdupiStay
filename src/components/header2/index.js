@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Logo from '../../images/allimg/udpi.webp'
+import Logo from '../../images/allimg/logo/logo white.png'
 import { Link } from 'react-router-dom'
 import MobileMenu from '../../components/MobileMenu'
 import Projects from '../../api/project'
@@ -134,7 +134,7 @@ export default class Header2 extends Component {
                                                 </div>
                                                 <div className={`header-right-menu-wrap ${isSidebarShow ? 'right-menu-active' : ''}`} >
                                                     <button onClick={this.sidebarHandler} className="right-menu-close"><i className="ti-close"></i></button>
-                                                    <div className="logo"><img src={Logo} alt="" /></div>
+                                                    <div className="logo"><img src={Logo} alt=""  style={{width:'230px'}}/></div>
                                                     <div className="header-right-sec" >
                                                         <div className="project-widget widget">
                                                             <h3>Our Latest Projects</h3>

@@ -15,7 +15,7 @@ const BlogSection = (props) => {
 
         <section className="wpo-blog-section section-padding" id="blog">
             <div className="container">
-                <SectionTitle subTitle={'Home Stay'} MainTitle={'Our Home Stay'}/>
+                <SectionTitle subTitle={'Udupi HomeStay'} MainTitle={'Our Homestay'}/>
                 <div className="wpo-blog-items">
                     <div className="row">
                         {blogs.slice(0,6).map((blog, Bitem) => (

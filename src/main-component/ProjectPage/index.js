@@ -4,7 +4,7 @@ import PageTitle from '../../components/pagetitle'
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
 import ProjectsS2 from '../../components/ProjectsS2'
-import Logo from '../../images/allimg/greenlogo.webp'
+import Logo from '../../images/allimg/logo/logo black.png'
 import BlogSectionS2 from '../../components/BlogSectionS2';
 import project from '../../images/allimg/top/project.webp';
 
