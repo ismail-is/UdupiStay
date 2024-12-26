@@ -203,7 +203,7 @@ class BookingForm extends Component {
     return (
       <div>
         <div className="wpo-contact-title">
-          <h4>Book your stay today</h4>
+          <h4>Book Your Stay Today</h4>
         </div>
         <form onSubmit={this.submitHandler} className="form">
           <div className="row">
