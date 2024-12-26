@@ -1,28 +1,28 @@
 /*---------------------------
 	Fonts
 ----------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap');
-
+// @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Qwitcher+Grypen:wght@400;700&display=swap');
 
 @font-face {
-	font-family: 'Muli';
+	font-family: '"Qwitcher Grypen", serif';
 	font-style: normal;
 	font-weight: 500;
-	src: local('Muli Regular'), url('../../fonts/text-font/Muli-Regular.woff') format('woff');
+	// src: local('Muli Regular'), url('../../fonts/text-font/Muli-Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Muli';
 	font-style: normal;
 	font-weight: 600;
-	src: local('Muli SemiBold'), url('../../fonts/text-font/Muli-SemiBold.woff') format('woff');
+	// src: local('Muli SemiBold'), url('../../fonts/text-font/Muli-SemiBold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Muli';
 	font-style: normal;
 	font-weight: 700;
-	src: local('Muli Bold'), url('../../fonts/text-font/Muli-Bold.woff') format('woff');
+	// src: local('Muli Bold'), url('../../fonts/text-font/Muli-Bold.woff') format('woff');
 }
  
 
@@ -30,7 +30,8 @@
 // fonts
 $base-font-size: 15;
 $base-font: 'Muli';
-$heading-font: 'Jost', sans-serif;
+$heading-font: "Baskervville", serif;;
+// $heading-font: 'Jost', sans-serif;
 
 
 // color
