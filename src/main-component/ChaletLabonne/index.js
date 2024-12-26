@@ -136,7 +136,7 @@ const ChaletLabonne =() => {
                                     
                                         <div className="col-lg-7">
                                             <div className="wpo-project-single-title">
-                                                <h3>Chalet La Bonne Vie Fully Furnished 2-bhk Modern Villa</h3>
+                                                <h3>Chalet La Bonne Vie Fully Furnished <span style={{fontFamily:'serif'}}>2</span> BHK Modern Villa</h3>
                                             </div>
                                             <p>Chalet La Bonne Vie is a luxurious 2-BHK homestay that offers a perfect blend of modern comfort and serene natural beauty. Featuring a fully equipped modern kitchen, this charming retreat ensures a cozy and convenient stay for guests.</p>
                                             <p> What sets Chalet La Bonne Vie apart is its unique backyard—a beautiful bird sanctuary bustling with vibrant avian life, a farm with friendly domestic animals, and a tranquil fish pond situated right next to the rooms. Guests can enjoy stunning views of the bird sanctuary and farm directly from their room, creating an immersive experience in nature. Whether you’re seeking relaxation or a connection with the outdoors, Chalet La Bonne Vie is the ideal escape.</p>

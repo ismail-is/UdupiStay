@@ -136,7 +136,7 @@ const ViewPoint  =() => {
                                     
                                         <div className="col-lg-7">
                                             <div className="wpo-project-single-title">
-                                                <h3>Viewpoint Oasis - Jacuzzi, BBQ area, rooftop viewpoint</h3>
+                                                <h3>Viewpoint Oasis - Jacuzzi, BBQ Area, Rooftop Viewpoint</h3>
                                             </div>
                                             <p>Viewpoint Oasis is an exclusive outdoor retreat for Udupi Homestay guests, featuring a relaxing jacuzzi, a dedicated BBQ area, and a spacious garden perfect for family gatherings and fun.</p>
                                             <p>The **rooftop viewpoint** offers stunning panoramic views, making it an ideal spot to unwind, enjoy nature, and create lasting memories with loved ones.</p>

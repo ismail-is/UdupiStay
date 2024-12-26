@@ -137,7 +137,7 @@ const TopVilla =() => {
                                     
                                         <div className="col-lg-7">
                                             <div className="wpo-project-single-title">
-                                                <h3>Hill Top 3BHK Fully Furnished Villa</h3>
+                                                <h3>Hill Top <span style={{fontFamily:'serif'}}>3</span> BHK Fully Furnished Villa</h3>
                                             </div>
                                             <p>Situated on top of a small hill, the Hill Top Villa offers a peaceful retreat with stunning views and serene surroundings. This spacious 3-BHK air-conditioned villa is fully furnished, featuring all the modern amenities you need for a relaxing and comfortable stay. </p>
                                             <p>Located just 7 kilometers from Udupi city center and 4 kilometers from Katapadi, near the national highway, it offers easy access to local attractions while providing a tranquil escape. Enjoy the refreshing natural breeze and the soothing sounds of birds and wildlife as you unwind in this perfect hideaway. Ideal for those looking to experience both comfort and nature, the Hill Top Villa is your ideal destination for a peaceful getaway.</p>

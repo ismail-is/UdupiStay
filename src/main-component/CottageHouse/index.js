@@ -141,7 +141,7 @@ const CottageHouse =() => {
                                     
                                         <div className="col-lg-7">
                                             <div className="wpo-project-single-title">
-                                                <h3>Cottage House 3-BHK with Fully Furnished</h3>
+                                                <h3>Cottage House <span style={{fontFamily:'serif'}}>3</span> BHK with Fully Furnished</h3>
                                             </div>
                                             <p>This charming Cottage House is a fully furnished, air-conditioned 3-BHK villa that offers all the modern amenities for a comfortable stay. Located in a serene setting, just 7 kilometers from Udupi city center and 4 kilometers from Katapadi, near the national highway, it is ideally situated for both convenience and tranquility. </p>
                                             <p>The Cottage House is situated in a peaceful neighborhood, surrounded by lush greenery and offering a calm atmosphere that allows guests to escape the hustle and bustle of everyday life. Enjoy the refreshing morning breeze, the soothing sounds of nature, and a truly relaxing stay in this delightful cottage. Whether you seek relaxation or adventure, the Cottage House provides the perfect environment to unwind and rejuvenate.</p>

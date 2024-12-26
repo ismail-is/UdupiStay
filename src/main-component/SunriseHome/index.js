@@ -136,7 +136,7 @@ const SunriseHome =() => {
                                     
                                         <div className="col-lg-7">
                                             <div className="wpo-project-single-title">
-                                                <h3>Sunrise House, A Fully Furnished 3bhk Home</h3>
+                                                <h3>Sunrise House, A Fully Furnished <span style={{fontFamily:'serif'}}>3</span> BHK  Home</h3>
                                             </div>
                                             <p>Sunrise Home is a spacious, air-conditioned 3-BHK villa, fully furnished with all the modern amenities to ensure a comfortable stay. Conveniently located just 7 kilometers from Udupi city center and 4 kilometers from Katapadi, near the national highway, it offers easy access to both urban and natural attractions.</p>
                                             <p>The villa is situated near udupi & manipal, perched on a small hill, providing an exceptionally peaceful and serene environment. The elevated position of the villa offers a tranquil atmosphere, perfect for escaping the hustle and bustle of city life. Guests can enjoy the refreshing natural breeze and the soothing sounds of wildlife, making it an ideal retreat for relaxation.</p>
