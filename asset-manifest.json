@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/UdupiStay/static/css/main.6a11a5da.css",
+    "main.css": "/UdupiStay/static/css/main.3db90a34.css",
     "main.js": "/UdupiStay/static/js/main.9a5cb2f4.js",
     "static/js/787.884f7618.chunk.js": "/UdupiStay/static/js/787.884f7618.chunk.js",
     "static/media/Caterings.webp": "/UdupiStay/static/media/Caterings.4c4a78bdf051e6c40bff.webp",
@@ -75,9 +75,6 @@
     "static/media/V3.webp": "/UdupiStay/static/media/V3.f29f21e62612288cf9d2.webp",
     "static/media/S2.webp": "/UdupiStay/static/media/S2.fd47f73c832a0a625854.webp",
     "static/media/h3.webp": "/UdupiStay/static/media/h3.3c5d5ecaa695d965a107.webp",
-    "static/media/Muli-Bold.woff": "/UdupiStay/static/media/Muli-Bold.14e4b6420c2efbb19edd.woff",
-    "static/media/Muli-Regular.woff": "/UdupiStay/static/media/Muli-Regular.1097f30cacc100fa75f3.woff",
-    "static/media/Muli-SemiBold.woff": "/UdupiStay/static/media/Muli-SemiBold.e4511dae91686ad50116.woff",
     "static/media/h2.webp": "/UdupiStay/static/media/h2.3fe2a5703716da78c98c.webp",
     "static/media/Chalet.webp": "/UdupiStay/static/media/Chalet.425eed802c9783ffff00.webp",
     "static/media/h4.webp": "/UdupiStay/static/media/h4.cf191777da67c7d40998.webp",
@@ -106,12 +103,12 @@
     "static/media/slick.ttf": "/UdupiStay/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/UdupiStay/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/UdupiStay/index.html",
-    "main.6a11a5da.css.map": "/UdupiStay/static/css/main.6a11a5da.css.map",
+    "main.3db90a34.css.map": "/UdupiStay/static/css/main.3db90a34.css.map",
     "main.9a5cb2f4.js.map": "/UdupiStay/static/js/main.9a5cb2f4.js.map",
     "787.884f7618.chunk.js.map": "/UdupiStay/static/js/787.884f7618.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6a11a5da.css",
+    "static/css/main.3db90a34.css",
     "static/js/main.9a5cb2f4.js"
   ]
 }
