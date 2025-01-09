@@ -315,7 +315,7 @@ class BookingForm extends Component {
                 </button>
               </div>
             </div>
-            <h4 style={{ textAlign: "center", marginTop: "30px" }}>
+            <h4 style={{ textAlign: "center", marginTop: "30px",fontFamily:'poppins' }} >
               Total Price: Rs. {totalPrice} 
               {extraPrice > 0 && `  +${extraPrice}`}
             </h4>
