@@ -151,7 +151,7 @@ const WhiteHouse =() => {
                                             <div className="wpo-project-single-content-des-right">
                                                 <ul>
                                                     <li>Property Type :<span>White House</span></li>
-                                                    <li>Capacity :<span>30+ Guests</span></li>
+                                                    <li>Capacity :<span>35+ Guests</span></li>
                                                     <li>Rooms :<span>7BHK with A/C</span></li>
                                                     <li>Location :<span> Udupi, Karnataka</span></li>
                                                     <li>Features :<span>Ideal for families and group stays</span></li>

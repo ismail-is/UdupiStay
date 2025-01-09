@@ -145,7 +145,7 @@ const SunriseHome =() => {
                                             <div className="wpo-project-single-content-des-right">
                                                 <ul>
                                                     <li>Property Type :<span>Sunrise House</span></li>
-                                                    <li>Capacity :<span>6 Guests</span></li>
+                                                    <li>Capacity :<span>8 Guests</span></li>
                                                     <li>Rooms :<span>3 BHK with A/C</span></li>
                                                     <li>Location :<span>Udupi, Karnataka</span></li>
                                                     <li>Features :<span> Ideal for families and Friends</span></li>
