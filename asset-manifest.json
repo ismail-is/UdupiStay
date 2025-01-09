@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/UdupiStay/static/css/main.3db90a34.css",
-    "main.js": "/UdupiStay/static/js/main.491c07ee.js",
+    "main.js": "/UdupiStay/static/js/main.7ed63322.js",
     "static/js/787.884f7618.chunk.js": "/UdupiStay/static/js/787.884f7618.chunk.js",
     "static/media/Caterings.webp": "/UdupiStay/static/media/Caterings.4c4a78bdf051e6c40bff.webp",
     "static/media/Viewpoint.webp": "/UdupiStay/static/media/Viewpoint.77a2192cb1bf0f0347c9.webp",
@@ -49,6 +49,7 @@
     "static/media/h6.webp": "/UdupiStay/static/media/h6.c5b6bc14da812c778b8d.webp",
     "static/media/homeabout.webp": "/UdupiStay/static/media/homeabout.4d97b3024586a1bb42ae.webp",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/UdupiStay/static/media/fontawesome-webfont.0317d582b93c20f68e05.woff2",
+    "static/media/13.webp": "/UdupiStay/static/media/13.c39771a2b1ce562285bb.webp",
     "static/media/17.webp": "/UdupiStay/static/media/17.a54f4a74113719bcc350.webp",
     "static/media/5.webp": "/UdupiStay/static/media/5.a45dc6176b4a2cfe800d.webp",
     "static/media/V4.webp": "/UdupiStay/static/media/V4.35e27a56822e39117f9b.webp",
@@ -80,7 +81,6 @@
     "static/media/h4.webp": "/UdupiStay/static/media/h4.cf191777da67c7d40998.webp",
     "static/media/S3.webp": "/UdupiStay/static/media/S3.1bd3ec97ce4bcbf81224.webp",
     "static/media/bg.png": "/UdupiStay/static/media/bg.1eabf87e9fe42166556e.png",
-    "static/media/13.webp": "/UdupiStay/static/media/13.c39771a2b1ce562285bb.webp",
     "static/media/S6.webp": "/UdupiStay/static/media/S6.12aaa81c6f54e9c23ccd.webp",
     "static/media/11.webp": "/UdupiStay/static/media/11.4cdbc8ca82026eaaf73a.webp",
     "static/media/S4.webp": "/UdupiStay/static/media/S4.882f15409350a56068b6.webp",
@@ -104,11 +104,11 @@
     "static/media/slick.woff": "/UdupiStay/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/UdupiStay/index.html",
     "main.3db90a34.css.map": "/UdupiStay/static/css/main.3db90a34.css.map",
-    "main.491c07ee.js.map": "/UdupiStay/static/js/main.491c07ee.js.map",
+    "main.7ed63322.js.map": "/UdupiStay/static/js/main.7ed63322.js.map",
     "787.884f7618.chunk.js.map": "/UdupiStay/static/js/787.884f7618.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3db90a34.css",
-    "static/js/main.491c07ee.js"
+    "static/js/main.7ed63322.js"
   ]
 }
