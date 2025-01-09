@@ -152,7 +152,7 @@ const ViewPoint  =() => {
                                                     <li>Facilities :<span> Jacuzzi, BBQ Area, Roof Top View Area</span></li>
                                                     <li>Outdoor & Gathering area</li>
                                                     {/* <li>Share :<span>Architectural, Business</span></li> */}
-                                                    <li><h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5> </li>
+                                                    <li><h5 className={classes.ribbon2} style={{fontFamily:'poppins'}}> Price Per Hour : {currentPrice} </h5> </li>
                                                 </ul>
                                             </div>
                                         </div>

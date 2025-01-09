@@ -7,7 +7,7 @@ import pimg6 from '../images/allimg/whitehouse/6.webp';
 import pimg7 from '../images/allimg/whitehouse/7.webp';
 import pimg8 from '../images/allimg/whitehouse/8.webp';
 import pimg9 from '../images/allimg/whitehouse/1.webp';
-import pimg10 from '../images/allimg/whitehouse/10.webp';
+import pimg10 from '../images/allimg/whitehouse/12.webp';
 import pimg11 from '../images/allimg/whitehouse/11.webp';
 import pimg12 from '../images/allimg/whitehouse/h1.webp';
 import pimg13 from '../images/allimg/whitehouse/h2.webp';

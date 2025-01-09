@@ -10,6 +10,7 @@ import pimg9 from '../images/allimg/chalet/9.webp';
 import pimg10 from '../images/allimg/chalet/10.webp';
 import pimg11 from '../images/allimg/chalet/11.webp';
 import pimg12 from '../images/allimg/chalet/12.webp';
+import pimg133 from '../images/allimg/chalet/13.webp';
 import pimg14 from '../images/allimg/chalet/h1.webp';
 import pimg15 from '../images/allimg/chalet/h2.webp';
 import pimg16 from '../images/allimg/chalet/h3.webp';
@@ -181,6 +182,14 @@ const Chalet = [
         Id: '19',
         pImg: pimg19,
         ps1img: ps1img9,
+        psub1img1: psub1img1,
+        psub1img2: psub1img2,
+        title: 'ARCHITECTURE',
+        subTitle: 'Innovative Architecture Design',
+    },
+    {
+        Id: '13',
+        pImg: pimg133,
         psub1img1: psub1img1,
         psub1img2: psub1img2,
         title: 'ARCHITECTURE',

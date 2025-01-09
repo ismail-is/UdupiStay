@@ -20,7 +20,7 @@ const GardenImg = () => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="project-grids gallery-container clearfix">
-                                        {Projects.slice(0, 25).map((project, pot) => (
+                                        {Projects.slice(0, 24).map((project, pot) => (
                                             <div className="grid" key={pot}>
                                                 <div className="wpo-project-item">
                                                     <div className="wpo-project-img">

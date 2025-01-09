@@ -233,7 +233,7 @@ class CottageHouseform extends Component {
               className="col-lg-12 col-md-12 col-12"
               style={{ marginTop: "30px", textAlign: "center" }}
             >
-              <h4>
+              <h4 style={{fontFamily:'poppins'}}>
                 Total Price: Rs. {totalPrice}
                 {extraCharges > 0 && ` + Rs. ${extraCharges}`}
               </h4>

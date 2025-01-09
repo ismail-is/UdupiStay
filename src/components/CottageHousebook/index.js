@@ -121,7 +121,7 @@ const CottageHousebook = () => {
             </div>
                         <div className="wpo-contact-form-area" style={{ borderRadius: "4px", boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.5)", background: "linear-gradient(232deg, #96b01280, #96b012)", }}>
                             <div className={classes.ribbon1}>Book Now to<br/> Get 10% Off</div>
-                            <h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5>
+                            <h5 className={classes.ribbon2} style={{fontFamily:'poppins'}}>  Price Per Day : {currentPrice} </h5>
                             <CottageHouseform />
                         </div>
 

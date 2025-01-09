@@ -157,7 +157,7 @@ const WhiteHouse =() => {
                                                     <li>Features :<span>Ideal for families and group stays</span></li>
                                                     <li>Facilities :<span>Free Wi-Fi, Fully Equipped Kitchen, Parking</span></li>
                                                     {/* <li>Share :<span>Architectural, Business</span></li> */}
-                                                    <li><h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5> </li>
+                                                    <li><h5 className={classes.ribbon2} style={{fontFamily:'poppins'}}> Price Per Day : {currentPrice} </h5> </li>
                                                 </ul>
                                                
                                                 {/* <h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5> */}

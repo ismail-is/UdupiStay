@@ -129,8 +129,8 @@ class ViewPointForm extends Component {
             </div>
 
             {/* Total Price */}
-            <div className="col-lg-12 col-md-12 col-12 text-center mt-3">
-              <h4>Total Price: Rs. {totalPrice}</h4>
+            <div className="col-lg-12 col-md-12 col-12 text-center mt-3" >
+              <h4 style={{fontFamily:'poppins'}}>Total Price: Rs. {totalPrice}</h4>
             </div>
           </div>
         </form>

@@ -106,7 +106,7 @@ const Footer = (props) =>{
                 <div className="row">
                     <div className="col col-xs-12">
                         <ul>
-                            <li>&copy; 2024 udupistay. Design By <a href="https://brightmedia.tech/" target='blank'>Bright Media </a></li>
+                            <li>&copy; 2025 udupistay. Design By <a href="https://brightmedia.tech/" target='blank'>Bright Media </a></li>
                             {/* <li><Link onClick={ClickHandler} to="/">Terms of use |</Link> <Link onClick={ClickHandler} to="/">Privacy Environmental Policy</Link></li> */}
                         </ul>
                     </div>

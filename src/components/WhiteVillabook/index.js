@@ -148,7 +148,7 @@ const WhiteVillabook = () => {
               <div className={classes.ribbon1}>
                 Book Now to<br /> Get 10% Off
               </div>
-              <h5 className={classes.ribbon2}> Price Per Day : {currentPrice} </h5>
+              <h5 className={classes.ribbon2} style={{fontFamily:'poppins'}}> Price Per Day : {currentPrice} </h5>
               <WhiteVillaform />
             </div>
           </div>
