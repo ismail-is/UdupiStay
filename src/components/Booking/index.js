@@ -3,7 +3,7 @@ import ContactForm from '../ContactFrom'
 import BookingForm from '../BookingForm';
 import CheckWrap from '../CheckWrap';
 import { Grid } from '@material-ui/core';
-
+import whatsapp1 from "../../images/allimg/whatsapp/whatsapp1.png";
 
 const Booking = () => {
 
@@ -31,7 +31,26 @@ const Booking = () => {
   }}
 >
     
-  <BookingForm />
+  {/* <BookingForm /> */}
+  <div className="form-field" style={{ display: 'flex' ,gap:'30px',justifyContent:'center'}}>
+  <h4 style={{marginTop:'15px'}}>Contact us on WhatsApp for pricing</h4>
+  <a
+    href="https://wa.me/918971220576"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="theme-btn d-flex align-items-center"
+    style={{ borderRadius: "3px", height: "55px", textDecoration: "none" ,marginBottom:'20px'}}
+  >
+    <img
+      src={whatsapp1}
+      alt="WhatsApp Icon"
+      style={{ height: "40px", marginRight: "8px" }}
+    />
+    Book Now
+  </a>
+</div>
+
+  
 </div>
 
                     </div>                

@@ -205,6 +205,7 @@ class BookingForm extends Component {
         <div className="wpo-contact-title">
           <h4>Book Your Stay Today</h4>
         </div>
+        
         <form onSubmit={this.submitHandler} className="form">
           <div className="row">
             <div className="col-lg-2 col-md-6 col-6">

@@ -26,7 +26,7 @@ const BlogSectionS2 = (props) => {
                                     <div className="wpo-blog-img">
                                         <img src={blog.screens} alt=""/>
                                         <div className="thumb1">{blog.thumb}</div>
-                                        <div className="thumb">Price Per Day:{blog.price}</div>
+                                        {/* <div className="thumb">Price Per Day:{blog.price}</div> */}
                                     </div>
                                     {/* <div className="wpo-blog-content">
                                         <ul>
@@ -56,7 +56,7 @@ const BlogSectionS2 = (props) => {
                                     <div className="wpo-blog-img">
                                         <img src={blog.screens} alt=""/>
                                         <div className="thumb1">{blog.thumb}</div>
-                                        <div className="thumb">Price Per Hour:{blog.price}</div>
+                                        {/* <div className="thumb">Price Per Hour:{blog.price}</div> */}
                                         
                                         
                                     </div>

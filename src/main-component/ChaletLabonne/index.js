@@ -151,7 +151,7 @@ const ChaletLabonne =() => {
                                                     <li>Features :<span>Ideal for Couples and Family</span></li>
                                                     <li>Facilities :<span>Free Wi-Fi, Fully Equipped Kitchen, Parking</span></li>
                                                     {/* <li>Share :<span>Architectural, Business</span></li> */}
-                                                    <li><h5 className={classes.ribbon2} style={{fontFamily:'poppins'}}> Price Per Day : {currentPrice} </h5> </li>
+                                                    {/* <li><h5 className={classes.ribbon2} style={{fontFamily:'poppins'}}> Price Per Day : {currentPrice} </h5> </li> */}
                                                 </ul>
                                             </div>
                                         </div>
@@ -263,7 +263,7 @@ const ChaletLabonne =() => {
             </div>
         </div> */}
                                     <div >
-                                    <ChaletBook/>
+                                    {/* <ChaletBook/> */}
                                     </div>
                                     {/* <div className="wpo-project-single-item">
                                         <div className="wpo-project-single-title">
